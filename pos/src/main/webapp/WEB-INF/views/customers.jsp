@@ -2,26 +2,27 @@
     
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>   
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>  
+ 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
-											 
+	
+							 
 	</head>
 	
 	<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>	
-	<body id="page-top">
-	
+	<body id="page-top">	
 			<%@include file="menu.jsp"%>		
-			<br />
+			<br />			
 			<form:form action="search" method="POST" class="text-black-50">					
 				<div class="container">				
 					<div class="row">
 						<div class="col">
-							<h2>List Customer
+							<h3 class="text-info">List Customers
 								<button type="button" class="btn btn-outline-light text-dark" onclick="location.href='new'; return false;" title="Add Customer">+</button>
-							</h2>
+							</h3>
 						</div>	
 					</div>										
 				
@@ -32,43 +33,43 @@
 					  	</span>
 					</div>	
 					<hr>
-				</div>
-					           
+				</div>					           
             </form:form>            	
-          		
-          	<div class="container">						
-				<div class="row text-black-50 font-weight-bold">
-					<div class="col">First Name</div>
-					<div class="col">Last Name</div>
-					<div class="col">Phone</div>
-					<div class="col">Edit</div>
-					<div class="col">Delete</div>
-				</div>			
-				<c:forEach var="tempCustomer" items="${customers}">				
-					<div class="row rowhover">
+        	<div class="container">	         
+				<table class="table table-hover">
+				  <thead>
+				    <tr>   
+				      <th scope="col">Edit</th>  
+				      <th scope="col">Name</th>
+				      <th scope="col">Contact</th>   
+				      <th scope="col">Delete</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				  <c:forEach var="tempCustomer" items="${customers}">
 						<c:url var="updateLink" value="/customer/update">
 							<c:param name="customerId" value="${tempCustomer.id}" />
 						</c:url>	
 						<c:url var="deleteLink" value="/customer/delete">
 							<c:param name="customerId" value="${tempCustomer.id}" />
-						</c:url>							
-						<div class="col"><a href="${updateLink}">${tempCustomer.firstName}</a></div>
-						<div class="col"><a href="${updateLink}">${tempCustomer.lastName}</a></div>
-						<div class="col"><a href="${updateLink}">${tempCustomer.email}</a></div>	
-					
-						<div class="col">
-							<a href="${deleteLink} EditIconColor" onclick="if (!(confirm('Are you sure you want to delete this Id: ' + ${tempCustomer.id} + '?'))) return false">
-								<i class="material-icons">edit</i>
+						</c:url>		
+						<tr>
+					      <td scope="row">	
+				      		<a href="${updateLink}">
+								<i class="material-icons text-success">edit</i>
 							</a>
-						</div>	
-						
-						<div class="col">
-							<a href="${deleteLink}">
-								<i class="material-icons icon-blue">delete_outline</i>	
-							</a>
-						</div>	
-					</div>					
-				</c:forEach>
+						  </td>
+					      <td><a href="${updateLink}">${tempCustomer.firstName}, ${tempCustomer.lastName}</a></td>
+					      <td><a href="${updateLink}">${tempCustomer.contactOne}</a></td>
+					      <td>
+					      		<a href="${deleteLink}" onclick="if (!(confirm('Are you sure you want to delete this Customer? ${tempCustomer.lastName}'))) return false">
+					      			<i class="material-icons text-danger">delete_outline</i>
+					      		</a>
+						   </td>
+					    </tr>	
+				    </c:forEach>
+					  </tbody>
+				 </table>	
 			</div>		
 	</body>
 </html>

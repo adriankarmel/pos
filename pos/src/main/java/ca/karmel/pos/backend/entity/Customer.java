@@ -1,5 +1,7 @@
 package ca.karmel.pos.backend.entity;
 
+import java.util.LinkedHashMap;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,59 +20,57 @@ public class Customer {
 	private int Id;		
 	
 	@Column(name="first_name")
-	@Size(min = 3, message = "First Name must between 1 to 10 Characters.")
+	@Size(min =1 , max=45, message = "First Name must between 1 to 45 Characters.")
 	private String firstName;
 	
 	@Column(name="last_name")
-	@Size(max=45,min=1)
+	@Size(min=1, max=45, message = "First Name must between 1 to 45 Characters.")
 	private String lastName;
 	
 	@Column(name="address")
-	@Size(max=45,min=1)
 	private String address;
 	
 	@Column(name="postal_code")
-	@Size(max=6,min=1)
+	@Size(max=6, message = "Postal Code must between 1 to 6 Characters.")
 	private String postalCode;
 	
-	@Column(name="email")
-	@Size(max=80)
-	private String email;	
-	
 	@Column(name="contact_type_one")
-	@Size(max=20)
 	private String contactTypeOne;	
 	
 	@Column(name="contact_one")
-	@Size(max=25)
 	private String contactOne;
 	
 	@Column(name="contact_type_two")
-	@Size(max=20)
 	private String contactTypeTwo;
 	
 	@Column(name="contact_two")
-	@Size(max=25)
 	private String ContactTwo;
 	
-	@Column(name="contact_type_three")
-	@Size(max=20)
-	private String contactTypeThree;
+	@Column(name="city")
+	private String city;
 	
-	@Column(name="contact_three")
-	@Size(max=20)
-	private String ContactThree;
+	@Column(name="province")
+	private String province;
 	
+	@Column(name="comments")
+	private String comments;	
+	
+	@Column(name="inactive")
+	private String inactive;	
+	
+	@Column(name="create_dt")
+	private String createDt;
+		
 	public Customer() {		
-	}	
+	}
 
 	public int getId() {
 		return Id;
 	}
-	
+
 	public void setId(int id) {
 		Id = id;
-	}	
+	}
 
 	public String getFirstName() {
 		return firstName;
@@ -86,7 +86,7 @@ public class Customer {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
-	}	
+	}
 
 	public String getAddress() {
 		return address;
@@ -94,8 +94,8 @@ public class Customer {
 
 	public void setAddress(String address) {
 		this.address = address;
-	}	
-	
+	}
+
 	public String getPostalCode() {
 		return postalCode;
 	}
@@ -103,7 +103,7 @@ public class Customer {
 	public void setPostalCode(String postalCode) {
 		this.postalCode = postalCode;
 	}
-	
+
 	public String getContactTypeOne() {
 		return contactTypeOne;
 	}
@@ -136,32 +136,44 @@ public class Customer {
 		ContactTwo = contactTwo;
 	}
 
-	public String getContactTypeThree() {
-		return contactTypeThree;
+	public String getCity() {
+		return city;
 	}
 
-	public void setContactTypeThree(String contactTypeThree) {
-		this.contactTypeThree = contactTypeThree;
+	public void setCity(String city) {
+		this.city = city;
 	}
 
-	public String getContactThree() {
-		return ContactThree;
+	public String getProvince() {
+		return province;
 	}
 
-	public void setContactThree(String contactThree) {
-		ContactThree = contactThree;
+	public void setProvince(String province) {
+		this.province = province;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getComments() {
+		return comments;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setComments(String comments) {
+		this.comments = comments;
 	}
 
-	@Override
-	public String toString() {
-		return "Customer [id=" + Id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
-	}		
+	public String getInactive() {
+		return inactive;
+	}
+
+	public void setInactive(String inactive) {
+		this.inactive = inactive;
+	}
+
+	public String getCreateDt() {
+		return createDt;
+	}
+
+	public void setCreateDt(String createDt) {
+		this.createDt = createDt;
+	}	
+	
 }

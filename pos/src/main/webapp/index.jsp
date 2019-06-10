@@ -4,11 +4,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %> 
 
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<title>Insert title here</title>
+		<title>POS</title>
 	</head>
 	<body>
 		<%// response.sendRedirect("customer/list"); %>
@@ -41,11 +43,11 @@
 				  align-content: flex-start;
 				  -webkit-flex-flow: row wrap;
 				  flex-flow: row wrap;		  
-				  height: 500px;			 
+				  height: 200px;			 
 			}
 			
 			.circle {
-			 	background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 220' width='100%25' height='100%25' preserveAspectRatio='none'><defs><linearGradient id='gradient'><stop offset='0' style='stop-color:%230070d8' /><stop offset='0.5' style='stop-color:%232cdbf1' /><stop offset='1' style='stop-color:%2383eb8a' /></linearGradient></defs><ellipse ry='100' rx='100' cy='110' cx='110' style='fill:none;stroke:url(%23gradient);stroke-width:6;' /></svg>");
+			 	background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 220' width='100%25' height='100%25' preserveAspectRatio='none'><defs><linearGradient id='gradient'><stop offset='0' style='stop-color:rgb(189, 63, 50)' /><stop offset='0.5' style='stop-color:RGB(203,53,107)' /><stop offset='1' style='stop-color:rgb(0,0,255)' /></linearGradient></defs><ellipse ry='100' rx='100' cy='110' cx='110' style='fill:none;stroke:url(%23gradient);stroke-width:6;' /></svg>");
 						background-size: 100% 100%; /* Fix for Fifefox image scaling */		   
 			    border-radius: 50%;
 			    background-color: black;
@@ -58,7 +60,7 @@
 			}
 			
 			.circle1 {
-			 	background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 220' width='100%25' height='100%25' preserveAspectRatio='none'><defs><linearGradient id='gradient'><stop offset='0' style='stop-color:rgb(255,0,0)' /><stop offset='0.5' style='stop-color:rgb(255,128,0)' /><stop offset='1' style='stop-color:%2383eb8a' /></linearGradient></defs><ellipse ry='100' rx='100' cy='110' cx='110' style='fill:none;stroke:url(%23gradient);stroke-width:6;' /></svg>");
+			 	background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 220' width='100%25' height='100%25' preserveAspectRatio='none'><defs><linearGradient id='gradient'><stop offset='0' style='stop-color:rgb(255,252,0)' /><stop offset='0.5' style='stop-color:rgb(255,255,255)' /><stop offset='1' style='stop-color:%2383eb8a' /></linearGradient></defs><ellipse ry='100' rx='100' cy='110' cx='110' style='fill:none;stroke:url(%23gradient);stroke-width:6;' /></svg>");
 						background-size: 100% 100%; /* Fix for Fifefox image scaling */		   
 			    border-radius: 50%;
 			    background-color: black;
@@ -71,7 +73,7 @@
 			}
 			
 			.circle.kitten {
-			    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 220' width='100%25' height='100%25' preserveAspectRatio='none'><defs><linearGradient id='gradient'><stop offset='0' style='stop-color:rgb(0,128,0)' /><stop offset='0.5' style='stop-color:rgb(128,0,128)' /><stop offset='1' style='stop-color:rgb(170,255,119)' /></linearGradient></defs><ellipse ry='100' rx='100' cy='110' cx='110' style='fill:none;stroke:url(%23gradient);stroke-width:6;' /></svg>");
+			    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 220' width='100%25' height='100%25' preserveAspectRatio='none'><defs><linearGradient id='gradient'><stop offset='0' style='stop-color:rgb(255,0,204)' /><stop offset='0.5' style='stop-color:rgb(51,51,153)' /><stop offset='1' style='stop-color:rgb(238,130,238)' /></linearGradient></defs><ellipse ry='100' rx='100' cy='110' cx='110' style='fill:none;stroke:url(%23gradient);stroke-width:6;' /></svg>");
 						background-size: 100% 100%; /* Fix for Fifefox image scaling */	    background-color: black;
 			    background-size: cover;
 			    background-repeat: none;
@@ -98,6 +100,64 @@
 			    font-size: 20px;		
 			}
 			
+			
+			<!-- -->
+			
+			
+			.circle_b {
+			 	background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 220' width='100%25' height='100%25' preserveAspectRatio='none'><defs><linearGradient id='gradient'><stop offset='0' style='stop-color:%230070d8' /><stop offset='0.5' style='stop-color:%232cdbf1' /><stop offset='1' style='stop-color:%2383eb8a' /></linearGradient></defs><ellipse ry='100' rx='100' cy='110' cx='110' style='fill:none;stroke:url(%23gradient);stroke-width:6;' /></svg>");
+						background-size: 100% 100%; /* Fix for Fifefox image scaling */		   
+			    border-radius: 50%;
+			    background-color: black;
+			    width: 200px;
+			    height: 200px;
+			    border-radius: 1000px;     
+			    margin: 50px 0.5em 0.5em 0.5em; 
+			    color: white;
+			  	font-weight: bold;
+			}
+			
+			.circle_b_1 {
+			 	background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 220' width='100%25' height='100%25' preserveAspectRatio='none'><defs><linearGradient id='gradient'><stop offset='0' style='stop-color:rgb(255,0,0)' /><stop offset='0.5' style='stop-color:rgb(255,128,0)' /><stop offset='1' style='stop-color:%2383eb8a' /></linearGradient></defs><ellipse ry='100' rx='100' cy='110' cx='110' style='fill:none;stroke:url(%23gradient);stroke-width:6;' /></svg>");
+						background-size: 100% 100%; /* Fix for Fifefox image scaling */		   
+			    border-radius: 50%;
+			    background-color: black;
+			    width: 200px;
+			    height: 200px;
+			    border-radius: 1000px;     
+			    margin: 50px 0.5em 0.5em 0.5em; 
+			    color: white;
+			  	font-weight: bold;
+			}
+			
+			.circle_b.kitten_b {
+			    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 220' width='100%25' height='100%25' preserveAspectRatio='none'><defs><linearGradient id='gradient'><stop offset='0' style='stop-color:rgb(179,17,144)' /><stop offset='0.5' style='stop-color:rgb(229,45,39)' /><stop offset='1' style='stop-color:rgb(179,18,23)' /></linearGradient></defs><ellipse ry='100' rx='100' cy='110' cx='110' style='fill:none;stroke:url(%23gradient);stroke-width:6;' /></svg>");
+						background-size: 100% 100%; /* Fix for Fifefox image scaling */	    background-color: black;
+			    background-size: cover;
+			    background-repeat: none;
+			    background-position: center center;
+			    color: white;
+			    font-weight: bold;
+			}
+			
+			.circle_b:hover {
+			     color: #009999;	
+			     opacity:0.5;
+			     font-size: 20px;	
+			}
+			
+			.circle_b_1:hover {
+			     color: rgb(255,165,0);		
+			     opacity:0.5;    
+			     font-size: 20px;		
+			}
+			
+			.circle_b.kitten_b:hover {
+			    color: #4CA64C;	
+			    opacity:0.5;
+			    font-size: 20px;		
+			}
+			
 			.aligner {
 				  display: flex;
 				  align-items: center;
@@ -118,7 +178,7 @@
 	</head>
 	<body style="background:black;"> 
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		    <a class="navbar-brand" href="index.html"><span class="marca">Karmel - </span><span class="marca1">POS</span></a>
+		    <a class="navbar-brand" href="/index/home"><span class="marca">Karmel - </span><span class="marca1">POS</span></a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  </button>
@@ -142,29 +202,45 @@
 		    </ul>		
 		  </div>
 		</nav> 
-		
-		
+				
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="grad1"></div>
 			</div>
 		</div>
 		<div class="container">		
-		  <div class="circle">
-		     <div class="aligner">
-		      	<a href="product/list" style="text-decoration:none;color:white;">POS Products</a>
-		    </div>
-		 </div>		  
-		 <div class="circle1">
-		    <div class="aligner">
-		      	<a href="customer/list" style="text-decoration:none;color:white;">POS Customers</a>
-		    </div>
-		  </div> 		  
-		  <div class="circle kitten">
-		    <div class="aligner">
-		      	<a href="login/new" style="text-decoration:none;color:white;">POS Users</a>
-		    </div>
-		  </div>
+		    <div class="circle">
+			     <div class="aligner">
+			      	<a href="pos/list" style="text-decoration:none;color:white;">POS</a>
+			    </div>
+			 </div>		  
+			 <div class="circle1">
+			    <div class="aligner">
+			      	<a href="product/list" style="text-decoration:none;color:white;">Products</a>
+			    </div>			   
+			  </div> 		  
+			  <div class="circle kitten">
+			    <div class="aligner">
+			      	<a href="customer/list" style="text-decoration:none;color:white;">Customer</a>
+			    </div>
+			  </div>
 		</div>	
+		<div class="container">		
+		    <div class="circle_b">
+			     <div class="aligner">
+			      	<a href="report/list" style="text-decoration:none;color:white;">Reports</a>
+			    </div>
+			 </div>		  
+			 <div class="circle_b_1">
+			    <div class="aligner">
+			      	<a href="user/list" style="text-decoration:none;color:white;">User</a>
+			    </div>
+			  </div> 		  
+			  <div class="circle_b kitten_b">
+			    <div class="aligner">
+			      	<a href="config/update" style="text-decoration:none;color:white;">Configuration</a>
+			    </div>
+			  </div>
+		</div>		
 	</body>
 </html> 

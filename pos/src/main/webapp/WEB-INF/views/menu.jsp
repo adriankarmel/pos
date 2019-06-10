@@ -4,14 +4,13 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>   
 
-
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 		<link type="text/css" rel="stylesheet"  href="${pageContext.request.contextPath}/resources/css/style.css" />
-		
+	
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -41,7 +40,7 @@
 <nav class="navbar navbar-dark bg-dark navbar-6">
 
   <!-- Navbar brand -->
- <a class="navbar-brand" href="index.html"><span class="marca">Karmel - </span><span class="marca1">POS</span></a>
+ <a class="navbar-brand" href="/pos/home"><span class="marca">Karmel - </span><span class="marca1">POS</span></a>
 
 
   <!-- Collapse button -->
@@ -54,17 +53,17 @@
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/backend/product/new">Product <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/pos/product/list">Product</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/backend/customer/new">Customer</a>
+        <a class="nav-link" href="/pos/customer/list">Customer</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/backend/user/new">User</a>
+        <a class="nav-link" href="/pos/user/list">User</a>
       </li>
       <lr>
       <li class="nav-item">
-        <a class="nav-link" href="/backend/config/update">Config</a>
+        <a class="nav-link" href="/pos/config/update">Config</a>
       </li>
     </ul>
     <!-- Links -->
@@ -170,12 +169,6 @@
 				  border-radius: 15px;
 				  border: 1px solid grey;
 				  background-color: white;
-			}
-			
-			.labelAzul{			
-				/*color:#16499A;*/
-				color:#fc4c02;
-				font-weight: bold;
 			}
 			
 			@media screen and (max-height: 450px) {

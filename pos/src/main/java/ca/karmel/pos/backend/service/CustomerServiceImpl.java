@@ -10,7 +10,6 @@ import ca.karmel.pos.backend.entity.Customer;
 
 import org.springframework.transaction.annotation.Transactional;
 
-
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
@@ -43,8 +42,7 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	@Transactional
-	public List<Customer> searchCustomer(String theSearchName) {
+	public List<Customer> searchCustomers(String theSearchName) {
 		return customerDAO.searchCustomers(theSearchName);
-
 	}
 }

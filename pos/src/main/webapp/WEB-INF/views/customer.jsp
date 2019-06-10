@@ -11,7 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 			
-		<title>List Customer</title>
+		<title>Customer</title>
 		
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 		
@@ -46,36 +46,36 @@
 		<form:form action="save" modelAttribute="customer" method="POST">
 				
 			<!-- need to associate this data with job id -->
-			<%-- <form:hidden path="Id" /> --%>		
+			<form:hidden path="Id" /> 	
 				
 			<%@ include file="menu.jsp" %>
 			<div class="container text-black-50">				
 				<br />
 				<div class="row">					
 					<div class="col">
-						<h2>Add Customer</h2>
+						<h3 class="text-info">Add Customer</h3>
 					</div>	
 				</div>		
 				<hr>
 				<div class="row">
 					<div class="col-6">
 					    <div class="form-group">
-							<label for="firstName">First Name</label>
+							<label for="firstName"><span class="text-danger"> * </span>First Name</label>
 							<form:input path="firstName" cssClass="form-control" autofocus="autofocus"/>
 							<form:errors path="firstName" cssClass="text-danger"></form:errors>
 					 	</div>	
 					</div>
 					<div class="col-6"> 	
 					    <div class="form-group">
-							<label for="lastName">Last Name</label>
+							<label for="lastName"><span class="text-danger"> * </span>Last Name</label>
 							<form:input path="lastName" cssClass="form-control" />
-							<form:errors path="lastName"  style="color:#7FFF00;font-weight:bold"></form:errors>
+							<form:errors path="lastName" cssClass="text-danger"></form:errors>
 					 	</div>	
 					 </div>	
 				</div>	 
 			 	<hr>
-			 	<div class="labelAzul">
-					<h5>Address Information</h5>
+			 	<div>
+					<h5 class="text-info">Address Information</h5>
 				</div>
 				
 		 	    <div class="form-group">
@@ -84,57 +84,90 @@
 					<form:errors path="address" cssClass="text-danger"></form:errors>
 			 	</div>
 			 	
-			 	<div class="form-group">
-					<label for="postalCode">Postal Code</label>
-					 <form:input path="postalCode" cssClass="form-control" />
-					<form:errors path="postalCode" cssClass="text-danger"></form:errors>
-			 	</div>		 	
+			 	<div class="row">
+			 		<div class="col-sm-4">
+					     <div class="form-group">
+							<label for="city">City</label>
+						    <form:input path="city" cssClass="form-control" />
+							<form:errors path="city" cssClass="text-danger"></form:errors>
+					 	</div>
+				 	</div>				 	
+					<div class="col-sm-4">	
+						<div class="form-group">
+							<label for="province">Province</label>
+							<form:select path="province" class="form-control">
+							  	<form:option value="AB">Alberta</form:option>								
+							  	<form:option value="BC">British Columbia</form:option>
+							  	<form:option value="MB">Manitoba</form:option>
+							  	<form:option value="NB">New Brunswick</form:option>
+							  	<form:option value="NL">Newfoundland and Labrador</form:option>
+							  	<form:option value="NS">Nova Scotia</form:option>
+							  	<form:option value="ON">Ontario</form:option>
+							  	<form:option value="PE">Prince Edward Island</form:option>
+							  	<form:option value="QC">Quebec</form:option>
+							  	<form:option value="SK">Saskatchewan</form:option>
+							  	<form:option value="NT">Northwest Territories</form:option>
+							  	<form:option value="NU">Nunavut</form:option>
+							  	<form:option value="YT">Yukon</form:option>							  	
+							 </form:select>	
+						</div>
+					</div> 
+					
+					 <div class="col-sm-4">	
+					 	<div class="form-group">
+							<label for="postalCode">Postal Code</label>
+							 <form:input path="postalCode" cssClass="form-control" />
+							<form:errors path="postalCode" cssClass="text-danger"></form:errors>
+					 	</div>	
+					 </div>	
+				</div> 		 
+				<hr>
+				<div>
+					<h5 class="text-info">Contact Information</h5>
+				</div>		
 			 	<div class="row">
 					<div class="col-6">	 	
 					    <div class="form-group">
 							<label for="contactTypeOne">Contact Type One</label>
-							<form:input path="contactTypeOne" cssClass="form-control" />
+							<form:select path="contactTypeOne" class="form-control">
+							  	<form:option value="CellPhone">Cell Phone</form:option>								
+							  	<form:option value="HomePhone">Home Phone</form:option>
+							  	<form:option value="Email">Email</form:option>											  	
+							 </form:select>						
 							<form:errors path="contactTypeOne" cssClass="text-danger"></form:errors>
 					 	</div>
-					     <div class="form-group">
+			   		    <div class="form-group">
+							<label for="contactTypeTwo">Contact Type Two</label>
+								<form:select path="contactTypeOne" class="form-control">
+							  	<form:option value="CellPhone">Cell Phone</form:option>								
+							  	<form:option value="HomePhone">Home Phone</form:option>
+							  	<form:option value="Email">Email</form:option>											  	
+							 </form:select>				
+							 <form:errors path="contactTypeTwo" cssClass="error"></form:errors>			
+					 	</div>	
+					</div>
+					<div class="col-6">
+				    	 <div class="form-group">
 							<label for="contactOne">Contact One</label>
 							<form:input path="contactOne" cssClass="form-control" />
 							<form:errors path="contactOne" cssClass="error"></form:errors>
-			 			</div>	
-					</div>
-					<div class="col-6">
-					    <div class="form-group">
-							<label for="contactTypeTwo">Contact Type Two</label>
-							<form:input path="contactTypeTwo" cssClass="form-control" />
-							<form:errors path="contactTypeTwo" cssClass="error"></form:errors>
-					 	</div>					
+			 			</div>							
 					    <div class="form-group">
 							<label for="contactTwo">Contact Two</label>
 							<form:input path="contactTwo" cssClass="form-control" />
 							<form:errors path="contactTwo" cssClass="text-danger"></form:errors>
 					 	</div>			
 					</div>
-				</div>	
-			
-			 	
-		
-			 
-			    <div class="form-group">
-					<label for="contactTypeThree">contactTypeThree</label>
-					<form:input path="contactTypeThree" cssClass="form-control" />
-					<form:errors path="contactTypeThree" cssClass="error"></form:errors>
-			 	</div>
-			
-			    <div class="form-group">
-					<label for="contactThree">contactThree</label>
-					<form:input path="contactThree" cssClass="form-control" />
-					<form:errors path="contactThree" cssClass="text-danger"></form:errors>
-			 	</div>			  	 	
-			 	 
+				</div>
+				
+				<div class="form-group">
+  					<label for="comment">Comment</label>
+  					<form:textarea class="form-control" rows="5" path="comments" placeholder="Comments" />
+				</div> 				
 			 	<hr>	
 			 	<div align="center">						
-					<button type="submit" class="btn btn-outline-light text-dark">Save</button>
-					<button type="button" class="btn btn-outline-light text-dark">Go Back</button>							
+					<button type="submit" class="btn btn-info">Save</button>
+					<button type="button" class="btn btn-info" onClick="history.go(-1);">Go Back</button>							
 				</div>
 			</div>				
 		</form:form>

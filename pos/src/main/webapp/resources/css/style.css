@@ -8,13 +8,12 @@ body{
 	color: red;
 }
 
-a:hover, a:visited, a:link, a:active {
+a, a:hover, a:visited a:link, a:active {
 
     text-decoration: none!important;
-
     -webkit-box-shadow: none!important;
     box-shadow: none!important;
-    color:white;
+    color:grey;
 }
 
 .rowhover:hover{
@@ -71,3 +70,7 @@ a:hover, a:visited, a:link, a:active {
 .editIconColor{
 	color:red;
 }
+
+.lowercase {
+  text-transform: lowercase;
+ }

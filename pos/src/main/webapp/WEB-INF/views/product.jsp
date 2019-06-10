@@ -13,14 +13,14 @@
 		<form:form action="save" modelAttribute="product" method="POST" class="text-black-50">
 				
 			<!-- need to associate this data with job id -->
-			<%-- <form:hidden path="Id" /> --%>		
+			 <form:hidden path="Id" /> 		
 				
 			<%@ include file="menu.jsp" %>
 			<div class="container">		
 				<br />		
 				<div class="row">
-					<div class="col labelAzul">
-						<h2>Add Product</h2>
+					<div class="col">
+						<h3 class="text-success">Add Product</h3>
 					</div>	
 				</div>
 				<hr>
@@ -29,10 +29,28 @@
 					<form:input path="name" cssClass="form-control" autofocus="autofocus"/>
 					<form:errors path="name" cssClass="error"></form:errors>
 			 	</div>	
+			 	
+			 	<div class="form-group">
+					<label for="price">Price</label>
+					<form:input path="price" cssClass="form-control" autofocus="autofocus"/>
+					<form:errors path="price" cssClass="error"></form:errors>
+			 	</div>	
+			 	
+			 	<div class="form-group">
+					<label for="stock">Stock</label>
+					<form:input path="stock" cssClass="form-control" autofocus="autofocus"/>
+					<form:errors path="stock" cssClass="error"></form:errors>
+			 	</div>	
+				<div class="form-group">
+  					<label for="comment">Comment</label>
+  					<form:textarea class="form-control" rows="5" path="comments" placeholder="Comments" />
+				</div> 		
+				
+							 	
 			 	<hr>	
 			 	<div align="center">						
-					<button type="submit" class="btn btn-outline-light text-dark">Save</button>
-					<button type="button" class="btn btn-outline-light text-dark">Go Back</button>							
+					<button type="submit" class="btn btn-success">Save</button>
+					<button type="button" class="btn btn-success" onClick="history.go(-1);">Go Back</button>							
 				</div>
 			</div>
 		</form:form>				

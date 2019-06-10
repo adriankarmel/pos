@@ -1,98 +1,97 @@
 package ca.karmel.pos.backend.dao;
 
 import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import ca.karmel.pos.backend.entity.Customer;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import ca.karmel.pos.backend.entity.Product;
 
 @Repository
-public class CustomerDAOImpl implements CustomerDAO {
+public class ProductDAOImpl implements ProductDAO {
+
 	
 	@Autowired
 	private SessionFactory sessionFactory;
 	
 	@Override
-	public List<Customer> getCustomers() {
-		// get the current hibernate session
+	public List<Product> getProducts() {
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		// create a query
-		Query<Customer> theQuery = 
-				currentSession.createQuery("FROM Customer"
-										 + " ORDER BY last_name", Customer.class);
+		Query<Product> theQuery = 
+				currentSession.createQuery("FROM Product"
+										 + " ORDER BY last_name", Product.class);
 		
 		// execute query and get result list
-		List<Customer> customer = theQuery.getResultList();
+		List<Product> product = theQuery.getResultList();
 				
 		// return the results				
-		return customer;
+		return product;
 	}
 
 	@Override
-	public void saveCustomer(Customer theCustomer) {
+	public void saveProduct(Product theProduct) {
 		// get current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
 		
-		// save/upate the customer ... finally LOL
-		currentSession.saveOrUpdate(theCustomer);	
+		// save/upate the Product ... finally LOL
+		currentSession.saveOrUpdate(theProduct);	
+
 	}
 
 	@Override
-	public Customer getCustomer(int theId) {
+	public Product getProduct(int theId) {
 		// get the current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		// now retrieve/read from database using the primary key
-		Customer theCustomer = currentSession.get(Customer.class, theId);
+		Product theProduct = currentSession.get(Product.class, theId);
 		
-		return theCustomer;
+		return theProduct;
 	}
 
 	@Override
-	public void deleteCustomer(int theId) {
-		// get the current hibernate session
+	public void deleteProduct(int theId) {
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		// delete object with primary key
 		Query theQuery = 
-				currentSession.createQuery("delete from Customer where id=:customerId");
-		theQuery.setParameter("customerId", theId);
+				currentSession.createQuery("delete from Product where id=:productId");
+		theQuery.setParameter("productId", theId);
 		
-		theQuery.executeUpdate();		
+		theQuery.executeUpdate();	
+
 	}
 
 	@Override
-	public List<Customer> searchCustomers(String theSearchName) {
+	public List<Product> searchProducts(String theSearchName) {
 		// get the current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		Query theQuery = null;
 		
-		//
 		// only search by name if theSearchName is not empty
-		//
+		
 		if (theSearchName != null && theSearchName.trim().length() > 0) {
 
 			// search for firstName or lastName ... case insensitive
-			theQuery =currentSession.createQuery("from Customer where lower(firstName) like :theName or lower(lastName) like :theName", Customer.class);
+			theQuery =currentSession.createQuery("from Product where lower(name) like :theName ", Customer.class);
 			theQuery.setParameter("theName", "%" + theSearchName.toLowerCase() + "%");
-
-		}
-		else {
+		}else {
 			// theSearchName is empty ... so just get all customers
-			theQuery =currentSession.createQuery("from Customer", Customer.class);			
+			theQuery =currentSession.createQuery("from Product", Customer.class);			
 		}
 		
 		// execute query and get result list
-		List<Customer> customers = theQuery.getResultList();
+		List<Product> products = theQuery.getResultList();
 				
 		// return the results		
-		return customers;				
+		return products;		
 	}
 
 }

@@ -6,7 +6,7 @@ import ca.karmel.pos.backend.entity.Product;
 
 public interface ProductService {
 
-	public List<Product> getCustomers();
+	public List<Product> getProducts();
 
 	public void saveProduct(Product theProduct);
 
@@ -14,6 +14,5 @@ public interface ProductService {
 
 	public void deleteProduct(int theId);
 
-	public List<Product> searchProduct(String theSearchName);
-	
+	public List<Product> searchProducts(String theSearchName);	
 }
