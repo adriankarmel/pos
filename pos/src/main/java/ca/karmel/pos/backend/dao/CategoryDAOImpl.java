@@ -1,73 +1,73 @@
 package ca.karmel.pos.backend.dao;
 
 import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import ca.karmel.pos.backend.entity.Customer;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import ca.karmel.pos.backend.entity.Category;
 
 @Repository
-public class CustomerDAOImpl implements CustomerDAO {
-	
+public class CategoryDAOImpl implements CategoryDAO {
+
 	@Autowired
 	private SessionFactory sessionFactory;
 	
 	@Override
-	public List<Customer> getCustomers() {
-		// get the current hibernate session
+	public List<Category> getCustomers() {
+		
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		// create a query
-		Query<Customer> theQuery = 
-				currentSession.createQuery("FROM Customer"
-										 + " ORDER BY last_name", Customer.class);
+		Query<Category> theQuery = 
+				currentSession.createQuery("FROM Category"
+										 + " ORDER BY name", Category.class);
 		
 		// execute query and get result list
-		List<Customer> customer = theQuery.getResultList();
+		List<Category> category = theQuery.getResultList();
 				
 		// return the results				
-		return customer;
+		return category;
 	}
 
 	@Override
-	public void saveCustomer(Customer theCustomer) {
+	public void saveCategory(Category theCategory) {
 		// get current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		// save/upate the customer ... finally LOL
-		currentSession.saveOrUpdate(theCustomer);	
+		currentSession.saveOrUpdate(theCategory);			
 	}
 
 	@Override
-	public Customer getCustomer(int theId) {
+	public Category getCategory(int theId) {
 		// get the current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		// now retrieve/read from database using the primary key
-		Customer theCustomer = currentSession.get(Customer.class, theId);
+		Category theCategory = currentSession.get(Category.class, theId);
 		
-		return theCustomer;
+		return theCategory;
 	}
 
 	@Override
-	public void deleteCustomer(int theId) {
-		// get the current hibernate session
+	public void deleteCategory(int theId) {
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		// delete object with primary key
 		Query theQuery = 
-				currentSession.createQuery("delete from Customer where id=:customerId");
-		theQuery.setParameter("customerId", theId);
+				currentSession.createQuery("delete from Category where id=:categoryId");
+		theQuery.setParameter("categoryId", theId);
 		
-		theQuery.executeUpdate();		
+		theQuery.executeUpdate();	
+		
 	}
 
 	@Override
-	public List<Customer> searchCustomers(String theSearchName) {
+	public List<Category> searchCategorys(String theSearchName) {
 		// get the current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
 		
@@ -79,19 +79,20 @@ public class CustomerDAOImpl implements CustomerDAO {
 		if (theSearchName != null && theSearchName.trim().length() > 0) {
 
 			// search for firstName or lastName ... case insensitive
-			theQuery =currentSession.createQuery("from Customer where lower(firstName) like :theName or lower(lastName) like :theName", Customer.class);
+			theQuery =currentSession.createQuery("from Category where lower(name) like :theName", Category.class);
 			theQuery.setParameter("theName", "%" + theSearchName.toLowerCase() + "%");
 
 		}
 		else {
 			// theSearchName is empty ... so just get all customers
-			theQuery =currentSession.createQuery("from Customer", Customer.class);			
+			theQuery =currentSession.createQuery("from Category", Category.class);			
 		}
 		
 		// execute query and get result list
-		List<Customer> customers = theQuery.getResultList();
+		List<Category> categories = theQuery.getResultList();
 				
 		// return the results		
-		return customers;				
+		return categories;				
 	}
+
 }

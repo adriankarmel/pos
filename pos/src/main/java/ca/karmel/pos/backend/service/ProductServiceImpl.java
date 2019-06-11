@@ -3,11 +3,13 @@ package ca.karmel.pos.backend.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import ca.karmel.pos.backend.dao.ProductDAO;
 import ca.karmel.pos.backend.entity.Product;
 
+@Service
 public class ProductServiceImpl implements ProductService {
 
 	@Autowired

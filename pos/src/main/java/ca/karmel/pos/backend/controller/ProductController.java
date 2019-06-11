@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import ca.karmel.pos.backend.entity.Customer;
 import ca.karmel.pos.backend.entity.Product;
 import ca.karmel.pos.backend.service.ProductService;
 
@@ -32,6 +33,20 @@ public class ProductController {
 	
 	   return "products";
 	}
+	
+	 @RequestMapping("/update") 
+	 public String updateProduct(@RequestParam("productId") int theId,
+				Model theModel) {
+			
+		// get the customer from our service
+		Product theProduct = productService.getProduct(theId);	
+		
+		// set customer as a model attribute to pre-populate the form
+		theModel.addAttribute("product", theProduct);
+		
+		// send over to our form		
+		 return "product"; 
+	 }
 	
 	@RequestMapping("/new")
 	public String newProduct(Model theModel) {

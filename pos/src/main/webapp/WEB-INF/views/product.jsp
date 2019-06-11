@@ -25,28 +25,58 @@
 				</div>
 				<hr>
 			    <div class="form-group">
-					<label for="name">Name</label>
-					<form:input path="name" cssClass="form-control" autofocus="autofocus"/>
-					<form:errors path="name" cssClass="error"></form:errors>
+					<label for="description"><span class="text-danger"> * </span>Description</label>
+					<form:input path="description" cssClass="form-control" autofocus="autofocus" maxlength="45"/>
+					<form:errors path="description" cssClass="text-danger"></form:errors>
 			 	</div>	
 			 	
-			 	<div class="form-group">
-					<label for="price">Price</label>
-					<form:input path="price" cssClass="form-control" autofocus="autofocus"/>
-					<form:errors path="price" cssClass="error"></form:errors>
-			 	</div>	
+			 <%-- 	<div class="row">
+					<div class="col-12">	 	
+					    <div class="form-group">
+							<label for="categoryId">Category</label>
+							<form:select path="categoryId" class="form-control">
+							  	<form:option value="1">Cell Phone</form:option>								
+							  	<form:option value="2">Home Phone</form:option>
+							  	<form:option value="3">Office</form:option>											  	
+							 </form:select>						
+					 	</div>
+					 </div>
+				</div>	 	 --%>
 			 	
 			 	<div class="form-group">
-					<label for="stock">Stock</label>
-					<form:input path="stock" cssClass="form-control" autofocus="autofocus"/>
-					<form:errors path="stock" cssClass="error"></form:errors>
-			 	</div>	
+			 		<div class="row">
+			 			<div class="col-sm-6">
+							<label for="price">Price</label>
+							<form:input path="price" cssClass="form-control" autofocus="autofocus"/>
+							<form:errors path="price" cssClass="text-danger"></form:errors>
+						</div>
+						<div class="col-sm-6">
+							<label for="stock">Stock</label>
+							<form:input path="stock" cssClass="form-control" autofocus="autofocus"/>
+							<form:errors path="stock" cssClass="text-danger"></form:errors>
+				 		</div>	
+				 	</div>	
+			 	</div>
+			 	
+			 	<div class="form-group">
+			 		<div class="row">
+			 			<div class="col-sm-6">
+							<label for="sku">SKU</label>
+							<form:input path="sku" cssClass="form-control" autofocus="autofocus"/>
+							<form:errors path="sku" cssClass="text-danger"></form:errors>
+						</div>
+						<div class="col-sm-6">
+							<label for="barCode">Barcode</label>
+							<form:input path="barCode" cssClass="form-control" autofocus="autofocus"/>
+							<form:errors path="barCode" cssClass="text-danger"></form:errors>
+				 		</div>	
+				 	</div>	
+			 	</div>
+			 	<hr>
 				<div class="form-group">
   					<label for="comment">Comment</label>
   					<form:textarea class="form-control" rows="5" path="comments" placeholder="Comments" />
-				</div> 		
-				
-							 	
+				</div> 	
 			 	<hr>	
 			 	<div align="center">						
 					<button type="submit" class="btn btn-success">Save</button>

@@ -26,8 +26,8 @@
 				<form:hidden path="id" cssClass="form-control" />					
 			 	
     			<div class="form-group">
-					<label for="companyName">Company Name</label>
-					<form:input path="companyName" cssClass="form-control" autofocus="autofocus"/>
+					<label for="companyName"><span class="text-danger"> * </span>Company Name</label>
+					<form:input path="companyName" cssClass="form-control" autofocus="autofocus" maxlength="50"/>
 					<form:errors path="companyName" cssClass="error"></form:errors>
 			 	</div>					
 			 	<div>

@@ -21,7 +21,7 @@
 					<div class="row">
 						<div class="col">
 							<h3 class="text-success">List Products
-								<button type="button" class="btn btn-outline-light text-dark" onclick="location.href='new'; return false;" title="Add Customer">+</button>
+								<button type="button" class="btn btn-outline-light text-dark" onclick="location.href='new'; return false;" title="Add Product">+</button>
 							</h3>
 						</div>	
 					</div>										
@@ -47,11 +47,11 @@
 				  </thead>
 				  <tbody>
 				  <c:forEach var="tempProduct" items="${products}">
-						<c:url var="updateLink" value="/customer/update">
-							<c:param name="customerId" value="${tempProduct.id}" />
+						<c:url var="updateLink" value="/product/update">
+							<c:param name="productId" value="${tempProduct.id}" />
 						</c:url>	
-						<c:url var="deleteLink" value="/customer/delete">
-							<c:param name="customerId" value="${tempProduct.id}" />
+						<c:url var="deleteLink" value="/product/delete">
+							<c:param name="productId" value="${tempProduct.id}" />
 						</c:url>		
 						<tr>
 					      <td scope="row">	
@@ -59,7 +59,7 @@
 								<i class="material-icons text-success">edit</i>
 							</a>
 						  </td>
-					      <td><a href="${updateLink}">${tempProduct.name}</a></td>
+					      <td><a href="${updateLink}">${tempProduct.description}</a></td>
 					      <td><a href="${updateLink}">${tempProduct.price}</a></td>
 					      <td>
 					      		<a href="${deleteLink}" onclick="if (!(confirm('Are you sure you want to delete this Product?'))) return false">

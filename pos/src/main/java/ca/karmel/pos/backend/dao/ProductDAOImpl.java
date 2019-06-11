@@ -8,7 +8,6 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import ca.karmel.pos.backend.entity.Customer;
 import ca.karmel.pos.backend.entity.Product;
 
 @Repository
@@ -25,7 +24,7 @@ public class ProductDAOImpl implements ProductDAO {
 		// create a query
 		Query<Product> theQuery = 
 				currentSession.createQuery("FROM Product"
-										 + " ORDER BY last_name", Product.class);
+										 + " ORDER BY description", Product.class);
 		
 		// execute query and get result list
 		List<Product> product = theQuery.getResultList();
@@ -80,11 +79,11 @@ public class ProductDAOImpl implements ProductDAO {
 		if (theSearchName != null && theSearchName.trim().length() > 0) {
 
 			// search for firstName or lastName ... case insensitive
-			theQuery =currentSession.createQuery("from Product where lower(name) like :theName ", Customer.class);
-			theQuery.setParameter("theName", "%" + theSearchName.toLowerCase() + "%");
+			theQuery =currentSession.createQuery("from Product where lower(description) like :theDescription ", Product.class);
+			theQuery.setParameter("theDescription", "%" + theSearchName.toLowerCase() + "%");
 		}else {
 			// theSearchName is empty ... so just get all customers
-			theQuery =currentSession.createQuery("from Product", Customer.class);			
+			theQuery =currentSession.createQuery("from Product", Product.class);			
 		}
 		
 		// execute query and get result list

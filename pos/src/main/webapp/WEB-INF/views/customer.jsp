@@ -61,14 +61,14 @@
 					<div class="col-6">
 					    <div class="form-group">
 							<label for="firstName"><span class="text-danger"> * </span>First Name</label>
-							<form:input path="firstName" cssClass="form-control" autofocus="autofocus"/>
+							<form:input path="firstName" cssClass="form-control" autofocus="autofocus" maxlength="25"/>
 							<form:errors path="firstName" cssClass="text-danger"></form:errors>
 					 	</div>	
 					</div>
 					<div class="col-6"> 	
 					    <div class="form-group">
 							<label for="lastName"><span class="text-danger"> * </span>Last Name</label>
-							<form:input path="lastName" cssClass="form-control" />
+							<form:input path="lastName" cssClass="form-control" maxlength="25" />
 							<form:errors path="lastName" cssClass="text-danger"></form:errors>
 					 	</div>	
 					 </div>	
@@ -80,17 +80,15 @@
 				
 		 	    <div class="form-group">
 					<label for="address">Address</label>
-					 <form:input path="address" cssClass="form-control" />
-					<form:errors path="address" cssClass="text-danger"></form:errors>
+					<form:input path="address" cssClass="form-control" maxlength="50" />				
 			 	</div>
 			 	
 			 	<div class="row">
 			 		<div class="col-sm-4">
 					     <div class="form-group">
 							<label for="city">City</label>
-						    <form:input path="city" cssClass="form-control" />
-							<form:errors path="city" cssClass="text-danger"></form:errors>
-					 	</div>
+						    <form:input path="city" cssClass="form-control" maxlength="40" />
+						 </div>
 				 	</div>				 	
 					<div class="col-sm-4">	
 						<div class="form-group">
@@ -116,8 +114,7 @@
 					 <div class="col-sm-4">	
 					 	<div class="form-group">
 							<label for="postalCode">Postal Code</label>
-							 <form:input path="postalCode" cssClass="form-control" />
-							<form:errors path="postalCode" cssClass="text-danger"></form:errors>
+							<form:input path="postalCode" cssClass="form-control"  maxlength="10"/>							
 					 	</div>	
 					 </div>	
 				</div> 		 
@@ -132,34 +129,42 @@
 							<form:select path="contactTypeOne" class="form-control">
 							  	<form:option value="CellPhone">Cell Phone</form:option>								
 							  	<form:option value="HomePhone">Home Phone</form:option>
-							  	<form:option value="Email">Email</form:option>											  	
+							  	<form:option value="Office">Office</form:option>											  	
 							 </form:select>						
-							<form:errors path="contactTypeOne" cssClass="text-danger"></form:errors>
 					 	</div>
 			   		    <div class="form-group">
 							<label for="contactTypeTwo">Contact Type Two</label>
-								<form:select path="contactTypeOne" class="form-control">
+							<form:select path="contactTypeOne" class="form-control">
 							  	<form:option value="CellPhone">Cell Phone</form:option>								
 							  	<form:option value="HomePhone">Home Phone</form:option>
-							  	<form:option value="Email">Email</form:option>											  	
-							 </form:select>				
-							 <form:errors path="contactTypeTwo" cssClass="error"></form:errors>			
+							  	<form:option value="Office">Office</form:option>											  	
+							 </form:select>
 					 	</div>	
 					</div>
 					<div class="col-6">
 				    	 <div class="form-group">
 							<label for="contactOne">Contact One</label>
-							<form:input path="contactOne" cssClass="form-control" />
-							<form:errors path="contactOne" cssClass="error"></form:errors>
+							<form:input path="contactOne" cssClass="form-control" />							
 			 			</div>							
 					    <div class="form-group">
 							<label for="contactTwo">Contact Two</label>
-							<form:input path="contactTwo" cssClass="form-control" />
-							<form:errors path="contactTwo" cssClass="text-danger"></form:errors>
+							<form:input path="contactTwo" cssClass="form-control" />						
 					 	</div>			
 					</div>
+				</div>				
+				<div class="row">
+					<div class="col-6">	 	
+					    <div class="form-group">
+							<label for="emailOne">Email One</label>
+							<form:input path="emailOne" cssClass="form-control" maxlength="80" />
+					 	</div>
+					 </div>	
+			   		  <div class="col-6">
+							<label for="emailTwo">Email Two</label>
+							<form:input path="emailTwo" cssClass="form-control" maxlength="80"/>
+					 </div>	
 				</div>
-				
+				<hr>
 				<div class="form-group">
   					<label for="comment">Comment</label>
   					<form:textarea class="form-control" rows="5" path="comments" placeholder="Comments" />

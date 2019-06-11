@@ -44,7 +44,14 @@ public class Customer {
 	private String contactTypeTwo;
 	
 	@Column(name="contact_two")
-	private String ContactTwo;
+	@Size(max=6, message = "Code must between 1 to 10 Characters.")
+	private String ContactTwo;	
+	
+	@Column(name="email_one")
+	private String emailOne;
+	
+	@Column(name="email_two")
+	private String emailTwo;
 	
 	@Column(name="city")
 	private String city;
@@ -134,6 +141,22 @@ public class Customer {
 
 	public void setContactTwo(String contactTwo) {
 		ContactTwo = contactTwo;
+	}
+	
+	public String getEmailOne() {
+		return emailOne;
+	}
+
+	public void setEmailOne(String emailOne) {
+		this.emailOne = emailOne;
+	}
+
+	public String getEmailTwo() {
+		return emailTwo;
+	}
+
+	public void setEmailTwo(String emailTwo) {
+		this.emailTwo = emailTwo;
 	}
 
 	public String getCity() {
