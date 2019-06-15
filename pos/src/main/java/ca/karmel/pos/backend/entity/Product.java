@@ -1,61 +1,52 @@
 package ca.karmel.pos.backend.entity;
 
-import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name="product")
-public class Product {	
+@Table(name = "product")
+public class Product {
+	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private int Id;
-	
-	@Column(name="description")
-	@Size(min =1 , max=45, message = "Name must between 1 to 45 Characters.")
-	private String description;	
-	
-	/*
-	 * @OneToMany(mappedBy="product", cascade={CascadeType.PERSIST,
-	 * CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
-	 * 
-	 * private List<Category> category;
-	 */
-	@Column(name="category_id")
-	private int categoryId;	
-		
-	/*
-	 * public List<Category> getCategory() { return category; }
-	 * 
-	 * public void setCategory(List<Category> category) { this.category = category;
-	 * }
-	 */
 
-	@Column(name="price")
+	@Column(name = "description")
+	@Size(min = 1, max = 45, message = "Name must between 1 to 45 Characters.")
+	private String description;
+
+	@ManyToOne(cascade = { CascadeType.PERSIST, 
+						   CascadeType.MERGE, 
+						   CascadeType.DETACH,
+						   CascadeType.REFRESH })
+	@JoinColumn(name="category_id")
+	private Category category;
+
+	@Column(name = "price")
 	private double price;
-	
-	@Column(name="stock")
-	private int stock;	
-	
-	@Column(name="sku")
-	private int sku;	
-	
-	@Column(name="barcode")
-	private String barCode;		
-	
-	@Column(name="comments")
-	private String comments;	
-	
-	public Product() {		
+
+	@Column(name = "stock")
+	private int stock;
+
+	@Column(name = "sku")
+	private int sku;
+
+	@Column(name = "barcode")
+	private String barCode;
+
+	@Column(name = "comments")
+	private String comments;
+
+	public Product() {
 	}
 
 	public int getId() {
@@ -64,7 +55,7 @@ public class Product {
 
 	public void setId(int id) {
 		Id = id;
-	}	
+	}
 
 	public String getDescription() {
 		return description;
@@ -72,14 +63,14 @@ public class Product {
 
 	public void setDescription(String description) {
 		this.description = description;
-	}		
-
-	public int getCategoryId() {
-		return categoryId;
 	}
 
-	public void setCategoryId(int categoryId) {
-		this.categoryId = categoryId;
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 
 	public double getPrice() {
@@ -97,7 +88,7 @@ public class Product {
 	public void setStock(int stock) {
 		this.stock = stock;
 	}
-	
+
 	public int getSku() {
 		return sku;
 	}
@@ -120,5 +111,5 @@ public class Product {
 
 	public void setComments(String comments) {
 		this.comments = comments;
-	}	
+	}
 }

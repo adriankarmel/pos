@@ -14,8 +14,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import ca.karmel.pos.backend.entity.Customer;
+import ca.karmel.pos.backend.entity.Category;
 import ca.karmel.pos.backend.entity.Product;
+import ca.karmel.pos.backend.service.CategoryService;
 import ca.karmel.pos.backend.service.ProductService;
 
 @Controller
@@ -23,6 +24,8 @@ import ca.karmel.pos.backend.service.ProductService;
 public class ProductController {
 		
 	@Autowired private ProductService productService;
+	
+	@Autowired private CategoryService CategoryService;
 	 
 	@RequestMapping("/list")
 	public String listProducts(Model theModel) {
@@ -38,10 +41,12 @@ public class ProductController {
 	 public String updateProduct(@RequestParam("productId") int theId,
 				Model theModel) {
 			
-		// get the customer from our service
-		Product theProduct = productService.getProduct(theId);	
-		
+		List<Category> theCate = CategoryService.getCategories();
+		theModel.addAttribute("categories", theCate);	
+		 
+	    // get the customer from our service
 		// set customer as a model attribute to pre-populate the form
+		Product theProduct = productService.getProduct(theId);			
 		theModel.addAttribute("product", theProduct);
 		
 		// send over to our form		
@@ -49,10 +54,12 @@ public class ProductController {
 	 }
 	
 	@RequestMapping("/new")
-	public String newProduct(Model theModel) {
+	public String newProduct(Model theModel) {		
+
+		List<Category> theCate = CategoryService.getCategories();
+		theModel.addAttribute("categories", theCate);	
 		
-		Product theProduct = new Product();
-		  
+		Product theProduct = new Product();  
 	    theModel.addAttribute("product", theProduct);
 		 
 		return "product";

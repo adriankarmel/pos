@@ -17,7 +17,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 	private SessionFactory sessionFactory;
 	
 	@Override
-	public List<Category> getCustomers() {
+	public List<Category> getCategories() {
 		
 		Session currentSession = sessionFactory.getCurrentSession();
 		
@@ -38,7 +38,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 		// get current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
 		
-		// save/upate the customer ... finally LOL
+		// save/upate the Category ... finally LOL
 		currentSession.saveOrUpdate(theCategory);			
 	}
 
@@ -67,7 +67,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 	}
 
 	@Override
-	public List<Category> searchCategorys(String theSearchName) {
+	public List<Category> searchCategories(String theSearchName) {
 		// get the current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
 		
@@ -84,8 +84,8 @@ public class CategoryDAOImpl implements CategoryDAO {
 
 		}
 		else {
-			// theSearchName is empty ... so just get all customers
-			theQuery =currentSession.createQuery("from Category", Category.class);			
+			// theSearchName is empty ... so just get all Category
+			theQuery = currentSession.createQuery("from Category", Category.class);			
 		}
 		
 		// execute query and get result list

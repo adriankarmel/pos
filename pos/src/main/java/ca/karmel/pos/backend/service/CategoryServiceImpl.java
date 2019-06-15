@@ -17,28 +17,31 @@ public class CategoryServiceImpl implements CategoryService {
 	
 	@Override
 	@Transactional
-	public List<Category> getCustomers() {
-		return null;
+	public List<Category> getCategories() {
+		return categoryDAO.getCategories();
 	}
 
 	@Override
 	@Transactional
 	public void saveCategory(Category theCategory) {
+		categoryDAO.saveCategory(theCategory);
 	}
 
 	@Override
 	@Transactional
-	public Category getCategory(int theId) {		
-		return null;
+	public Category getCategory(int theId) {	
+		return categoryDAO.getCategory(theId);
 	}
 
 	@Override
+	@Transactional
 	public void deleteCategory(int theId) {
+		categoryDAO.deleteCategory(theId);
 	}
 
 	@Override
 	@Transactional
-	public List<Category> searchCategorys(String theSearchName) {
-		return null;
+	public List<Category> searchCategories(String theSearchName) {
+		return categoryDAO.searchCategories(theSearchName);
 	}
 }

@@ -34,8 +34,8 @@ public class CustomerController {
 		return "customers";
 	}
 	
-	 @RequestMapping("/update") 
-	 public String updateCustomer(@RequestParam("customerId") int theId,
+	@RequestMapping("/update") 
+    public String updateCustomer(@RequestParam("customerId") int theId,
 				Model theModel) {
 			
 		// get the customer from our service
@@ -46,8 +46,7 @@ public class CustomerController {
 		
 		// send over to our form		
 		 return "customer"; 
-	 }
-	
+	}	
 
 	@RequestMapping("/new")
 	public String newCustomer(Model theModel) {
@@ -92,10 +91,5 @@ public class CustomerController {
 		customerService.deleteCustomer(theId);
 		
 		return "customers";
-	}	
-	
-	@GetMapping("/home")
-	public String goIndex() {		
-		return "redirect:/index.html";
 	}		
 }

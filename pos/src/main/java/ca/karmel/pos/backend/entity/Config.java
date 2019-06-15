@@ -127,5 +127,5 @@ public class Config {
 
 	public void setEmailTwo(String emailTwo) {
 		this.emailTwo = emailTwo;
-	}		
+	}	
 }

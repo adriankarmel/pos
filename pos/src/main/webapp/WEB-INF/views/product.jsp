@@ -30,29 +30,32 @@
 					<form:errors path="description" cssClass="text-danger"></form:errors>
 			 	</div>	
 			 	
-			 <%-- 	<div class="row">
+			  	<div class="row">
 					<div class="col-12">	 	
 					    <div class="form-group">
-							<label for="categoryId">Category</label>
-							<form:select path="categoryId" class="form-control">
-							  	<form:option value="1">Cell Phone</form:option>								
-							  	<form:option value="2">Home Phone</form:option>
-							  	<form:option value="3">Office</form:option>											  	
-							 </form:select>						
-					 	</div>
+					  	    <a href="/pos/category/list">
+								Category
+								<i class="material-icons text-success">edit</i>
+							</a>
+						   	<form:select path="category.id" cssClass="form-control">
+			 					<c:forEach var="tempCate" items="${categories}">
+		      						  <option value="${tempCate.id}" <c:if test="${tempCate.id eq category.id}">selected="selected"</c:if> >${tempCate.name}</options>
+		     					</c:forEach>	 				  		              
+				            </form:select>			            
+					     </div>
 					 </div>
-				</div>	 	 --%>
+				</div>
 			 	
 			 	<div class="form-group">
 			 		<div class="row">
 			 			<div class="col-sm-6">
 							<label for="price">Price</label>
-							<form:input path="price" cssClass="form-control" autofocus="autofocus"/>
+							<form:input path="price" cssClass="form-control" />
 							<form:errors path="price" cssClass="text-danger"></form:errors>
 						</div>
 						<div class="col-sm-6">
 							<label for="stock">Stock</label>
-							<form:input path="stock" cssClass="form-control" autofocus="autofocus"/>
+							<form:input path="stock" cssClass="form-control" />
 							<form:errors path="stock" cssClass="text-danger"></form:errors>
 				 		</div>	
 				 	</div>	
@@ -62,12 +65,12 @@
 			 		<div class="row">
 			 			<div class="col-sm-6">
 							<label for="sku">SKU</label>
-							<form:input path="sku" cssClass="form-control" autofocus="autofocus"/>
+							<form:input path="sku" cssClass="form-control" />
 							<form:errors path="sku" cssClass="text-danger"></form:errors>
 						</div>
 						<div class="col-sm-6">
 							<label for="barCode">Barcode</label>
-							<form:input path="barCode" cssClass="form-control" autofocus="autofocus"/>
+							<form:input path="barCode" cssClass="form-control" />
 							<form:errors path="barCode" cssClass="text-danger"></form:errors>
 				 		</div>	
 				 	</div>	

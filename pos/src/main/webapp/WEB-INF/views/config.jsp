@@ -13,6 +13,7 @@
 		<form:form action="save" modelAttribute="config" method="POST" class="text-black-50">			
 			
 			<%@include file="menu.jsp"%>
+			<form:hidden path="Id" /> 
 	
 			<br />
 			<div class="container">				

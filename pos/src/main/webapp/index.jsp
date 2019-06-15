@@ -238,7 +238,7 @@
 			  </div> 		  
 			  <div class="circle_b kitten_b">
 			    <div class="aligner">
-			      	<a href="config/update" style="text-decoration:none;color:white;">Configuration</a>
+			      	<a href="config/edit" style="text-decoration:none;color:white;">Configuration</a>
 			    </div>
 			  </div>
 		</div>		

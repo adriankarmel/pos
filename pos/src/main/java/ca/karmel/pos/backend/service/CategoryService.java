@@ -6,7 +6,7 @@ import ca.karmel.pos.backend.entity.Category;
 
 public interface CategoryService {
 	
-	public List<Category> getCustomers();
+	public List<Category> getCategories();
 
 	public void saveCategory(Category theCategory);
 
@@ -14,6 +14,6 @@ public interface CategoryService {
 
 	public void deleteCategory(int theId);
 
-	public List<Category> searchCategorys(String theSearchName);
+	public List<Category> searchCategories(String theSearchName);
 
 }
