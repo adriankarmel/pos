@@ -53,6 +53,10 @@
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
+        <a class="nav-link" href="/pos/new">POS</a>
+      </li>
+      <hr>
+      <li class="nav-item active">
         <a class="nav-link" href="/pos/product/list">Product</a>
       </li>
       <li class="nav-item">
@@ -63,7 +67,7 @@
       </li>
       <lr>
       <li class="nav-item">
-        <a class="nav-link" href="/pos/config/update">Config</a>
+        <a class="nav-link" href="/pos/config/edit">Config</a>
       </li>
     </ul>
     <!-- Links -->

@@ -2,17 +2,23 @@ package ca.karmel.pos.backend.controller;
 
 import java.util.List;
 
+import javax.enterprise.inject.Produces;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import ca.karmel.pos.backend.entity.Customer;
 import ca.karmel.pos.backend.service.CustomerService;
@@ -71,7 +77,7 @@ public class CustomerController {
 		return "redirect:/customer/list";
 	}
 	
-	@PostMapping("/search")
+	@PostMapping("/search")	
 	public String searchCustomers(@RequestParam("theSearchName") String theSearchName,
 									Model theModel) {
 
