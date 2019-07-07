@@ -46,18 +46,18 @@ public class CustomerRESTController {
 	}
 	
 	// url ejemplo: http://localhost:8080/pos/customer/GetById/1	 
-	 @RequestMapping(value="/Put/", method = RequestMethod.PUT)	 
+	/* @RequestMapping(value="/Put/", method = RequestMethod.PUT)	 
 	 @ResponseBody 
 	 public String saveCustomer(@Valid @ModelAttribute("customer") Customer theCustomer, BindingResult result) {
 		
 		if (result.hasErrors()) {
 			return "customer";
 		}
-		return repository.saveCustomer(theCustomer);
+	//	return repository.saveCustomer(theCustomer);
 		// save the customer using our service
 		;		
 		
-	 }
+	 }*/
 		
 		 
 }

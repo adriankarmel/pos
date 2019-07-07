@@ -2,7 +2,6 @@ package ca.karmel.pos.backend.controller;
 
 import java.util.List;
 
-import javax.enterprise.inject.Produces;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;

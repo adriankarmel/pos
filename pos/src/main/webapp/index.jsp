@@ -193,7 +193,7 @@
 		        <a class="nav-link" href="/customer/list">Customers</a>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="/login/list">Users</a>
+		        <a class="nav-link" href="/user/list">Users</a>
 		      </li>   
 		    </ul>		
 		  </div>
@@ -224,7 +224,7 @@
 		<div class="container">		
 		    <div class="circle_b">
 			     <div class="aligner">
-			      	<a href="report/list" style="text-decoration:none;color:white;">Reports</a>
+			      	<a href="reports/list" style="text-decoration:none;color:white;">Reports</a>
 			    </div>
 			 </div>		  
 			 <div class="circle_b_1">

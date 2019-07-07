@@ -19,8 +19,7 @@ import ca.karmel.pos.backend.service.CategoryService;
 
 @Controller
 @RequestMapping("/category")
-public class CategoryController {
-	
+public class CategoryController {	
 
 	@Autowired
 	private CategoryService categoryService;
@@ -36,8 +35,7 @@ public class CategoryController {
 	}
 	
 	 @RequestMapping("/update") 
-	 public String updateCategory(@RequestParam("categoryId") int theId,
-				Model theModel) {
+	 public String updateCategory(@RequestParam("categoryId") int theId, Model theModel) {
 			
 		// get the category from our service
 		 Category theCategory = categoryService.getCategory(theId);	

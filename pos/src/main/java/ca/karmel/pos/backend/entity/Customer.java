@@ -48,9 +48,11 @@ public class Customer {
 	private String ContactTwo;	
 	
 	@Column(name="email_one")
+	@Size(min =1 , max=80, message = "Email One must between 1 to 45 Characters.")
 	private String emailOne;
 	
 	@Column(name="email_two")
+	@Size(min =1 , max=80, message = "Email Two must between 1 to 45 Characters.")	
 	private String emailTwo;
 	
 	@Column(name="city")
