@@ -63,12 +63,12 @@
 						</div>	
 			    		<div class="col-md-4">
 							<label for="city">City</label>
-							<form:input path="city" cssClass="form-control" />
+							<form:input path="city" cssClass="form-control" maxlength="45" />
 							<form:errors path="city" cssClass="error"></form:errors>
 						</div>
 			    		<div class="col-md-4">
 							<label for="postalCode">Postal Code</label>
-							<form:input path="postalCode" cssClass="form-control" />
+							<form:input path="postalCode" cssClass="form-control" maxlength="10" />
 							<form:errors path="postalCode" cssClass="error"></form:errors>
 						</div>							
 				 	</div>
@@ -81,12 +81,12 @@
 				    <div class="row">
 			    		<div class="col-md-6">
 							<label for="phoneOne">Phone One</label>
-							<form:input path="phoneOne" cssClass="form-control" />
+							<form:input path="phoneOne" cssClass="form-control" maxlength="20" />
 							<form:errors path="phoneOne" cssClass="error"></form:errors>
 						</div>	
 			    		<div class="col-md-6">
 							<label for="phoneTwo">Phone Two</label>
-							<form:input path="phoneTwo" cssClass="form-control" />
+							<form:input path="phoneTwo" cssClass="form-control" maxlength="20" />
 							<form:errors path="phoneTwo" cssClass="error"></form:errors>
 						</div>
 				 	</div>			 	
@@ -95,12 +95,12 @@
 				    <div class="row">
 			    		<div class="col-md-6">
 							<label for="emailOne">Email One</label>
-							<form:input path="emailOne" cssClass="form-control" />
+							<form:input path="emailOne" cssClass="form-control text-lowercase" maxlength="80" />
 							<form:errors path="emailOne" cssClass="error"></form:errors>
 						</div>	
 			    		<div class="col-md-6">
 							<label for="emailTwo">Email Two</label>
-							<form:input path="emailTwo" cssClass="form-control" />
+							<form:input path="emailTwo" cssClass="form-control text-lowercase" maxlength="80" />
 							<form:errors path="emailTwo" cssClass="error"></form:errors>
 						</div>
 				 	</div>

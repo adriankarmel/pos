@@ -1,5 +1,7 @@
 package ca.karmel.pos.backend.entity;
 
+import java.util.Date;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -45,6 +47,15 @@ public class Product {
 
 	@Column(name = "comments")
 	private String comments;
+	
+	@Column(name="inactive")
+	private String inactive;	
+	
+	@Column(name="create_dt")	
+	private Date createDt;
+	
+	@Column(name="update_dt")
+	private Date updateDt;
 
 	public Product() {
 	}
@@ -112,4 +123,28 @@ public class Product {
 	public void setComments(String comments) {
 		this.comments = comments;
 	}
+
+	public String getInactive() {
+		return inactive;
+	}
+
+	public void setInactive(String inactive) {
+		this.inactive = inactive;
+	}
+
+	public Date getCreateDt() {
+		return createDt;
+	}
+
+	public void setCreateDt(Date createDt) {
+		this.createDt = createDt;
+	}
+
+	public Date getUpdateDt() {
+		return updateDt;
+	}
+
+	public void setUpdateDt(Date updateDt) {
+		this.updateDt = updateDt;
+	}	
 }

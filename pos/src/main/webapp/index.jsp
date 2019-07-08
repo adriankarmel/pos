@@ -183,7 +183,7 @@
 		    <ul class="navbar-nav mr-auto">
 		      
 		      <li class="nav-item active">
-		        <a class="nav-link" href="search.html">Search <span class="sr-only">(current)</span></a>
+		        <a class="nav-link" href="/sale/new">POS <span class="sr-only">(current)</span></a>
 		      </li> 
 		        		      
 		       <li class="nav-item">
@@ -191,10 +191,7 @@
 		      </li>		  
 		      <li class="nav-item">
 		        <a class="nav-link" href="/customer/list">Customers</a>
-		      </li>
-		      <li class="nav-item">
-		        <a class="nav-link" href="/user/list">Users</a>
-		      </li>   
+		      </li>		 
 		    </ul>		
 		  </div>
 		</nav> 
@@ -207,7 +204,7 @@
 		<div class="container">		
 		    <div class="circle">
 			     <div class="aligner">
-			      	<a href="posf/new" style="text-decoration:none;color:white;">POS</a>
+			      	<a href="/pos/new" style="text-decoration:none;color:white;">POS</a>
 			    </div>
 			 </div>		  
 			 <div class="circle1">
@@ -221,7 +218,7 @@
 			    </div>
 			  </div>
 		</div>	
-		<div class="container">		
+	<!-- 	<div class="container">		
 		    <div class="circle_b">
 			     <div class="aligner">
 			      	<a href="reports/list" style="text-decoration:none;color:white;">Reports</a>
@@ -238,5 +235,6 @@
 			    </div>
 			  </div>
 		</div>		
+		 -->
 	</body>
 </html> 

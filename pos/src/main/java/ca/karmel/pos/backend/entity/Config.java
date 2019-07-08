@@ -18,7 +18,7 @@ public class Config {
 	private int Id;
 	
 	@Column(name="company_name")
-	@Size(min =1 , max=45, message = "Company Name must between 1 to 50 Characters.")
+	@Size(min =1 , max=50, message = "Company Name must between 1 to 50 Characters.")
 	private String companyName;
 	
 	@Column(name="address")

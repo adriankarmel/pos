@@ -1,5 +1,7 @@
 package ca.karmel.pos.backend.entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -32,6 +34,15 @@ public class User {
 	@Column(name="comments")
 	@Size(min =1 , max=500, message = "Comments must between 1 to 500 Characters.")
 	private String comments;
+	
+	@Column(name="inactive")
+	private String inactive;	
+	
+	@Column(name="create_dt")	
+	private Date createDt;
+	
+	@Column(name="update_dt")
+	private Date updateDt;
 	
 	public User() {		
 	}
@@ -75,5 +86,29 @@ public class User {
 
 	public void setComments(String comments) {
 		this.comments = comments;
-	}		
+	}
+
+	public String getInactive() {
+		return inactive;
+	}
+
+	public void setInactive(String inactive) {
+		this.inactive = inactive;
+	}
+
+	public Date getCreateDt() {
+		return createDt;
+	}
+
+	public void setCreateDt(Date createDt) {
+		this.createDt = createDt;
+	}
+
+	public Date getUpdateDt() {
+		return updateDt;
+	}
+
+	public void setUpdateDt(Date updateDt) {
+		this.updateDt = updateDt;
+	}			
 }

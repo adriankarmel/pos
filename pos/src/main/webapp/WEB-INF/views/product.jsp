@@ -20,7 +20,11 @@
 				<br />		
 				<div class="row">
 					<div class="col">
-						<h3 class="text-success">Add Product</h3>
+						<h3 class="text-success">Add Product
+						   <a href="/pos/product/list">
+								<i class="material-icons">view_list</i>
+							</a>
+						</h3>	
 					</div>	
 				</div>
 				<hr>
@@ -37,9 +41,15 @@
 								Category
 								<i class="material-icons text-success">edit</i>
 							</a>
+							<p>Adrian:${category.id}</p>
+							
 						   	<form:select path="category.id" cssClass="form-control">
+						   		<!-- <option value="" <c:if test="${empty tempCate.id}">selected="selected"</c:if>>Please Select Category</option>	 -->					   	
+			 									 
+			 					
+			 					
 			 					<c:forEach var="tempCate" items="${categories}">
-		      						  <option value="${tempCate.id}" <c:if test="${tempCate.id eq category.id}">selected="selected"</c:if> >${tempCate.name}</options>
+		      						  <option value="${tempCate.id}" <c:if test="${tempCate.id eq category.id}">selected="selected"</c:if>>${tempCate.name}</option>
 		     					</c:forEach>	 				  		              
 				            </form:select>			            
 					     </div>
@@ -78,13 +88,26 @@
 			 	<hr>
 				<div class="form-group">
   					<label for="comment">Comment</label>
-  					<form:textarea class="form-control" rows="5" path="comments" placeholder="Comments" />
+  					<form:textarea class="form-control" rows="5" path="comments" placeholder="Comments" maxlength="500" />
 				</div> 	
 			 	<hr>	
 			 	<div align="center">						
 					<button type="submit" class="btn btn-success">Save</button>
 					<button type="button" class="btn btn-success" onClick="history.go(-1);">Go Back</button>							
 				</div>
+				<hr>
+				<div class="row">
+					<div class="col-6">	 	
+					    <div class="form-group">
+							<label for="createDt">Create Date</label>
+							<form:input path="createDt" cssClass="form-control"  readonly="true"/>
+					 	</div>
+					 </div>	
+			   		  <div class="col-6">
+							<label for="updateDt">Update Date</label>
+							<form:input path="updateDt" cssClass="form-control" readonly="true" />
+					 </div>	
+				</div>			
 			</div>
 		</form:form>				
 	</body>

@@ -10,64 +10,71 @@
     <head>
         <meta name="language" content="en" />   
 
-         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">       
       
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
  		
         <style>
-          body, html {               
-                margin: 0;
-                padding:0;
-                font-family: 'Open Sans', sans-serif;       
-            }   
-           
-
-.roundedBox{
-  /*margin:30px auto;*/
-  width: 100%;
-  height: 100%;
-  background: #fff;
-  padding: 0 30px;
-  box-sizing: border-box;
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,.3);
-  position: relative;
-  overflow: auto;
-  overflow-x:hidden;
-}
-
-.shoppingList{
-  padding: 20px;
-  height: 60vh;
-  overflow: auto;
-}
- 
-.priceTab{
-  padding-right: 20px;
-  padding-left: 20px;
-
-  padding-top: 0px !important;
-  margin-top: 15px;
-  width: 100%;
-  height:30vh;
-}
-
-.purchButton{
-  width:100%;
-  height:100%;
-  color: white;
-  letter-spacing: 2px;
-  overflow: hidden;
-  height:55px;
-  white-space: normal;
-  position: relative;
-  text-transform: uppercase;
-  -webkit-transition: all 0.3s ease;
-          transition: all 0.3s ease;
-}
-
+	          body, html {               
+	                margin: 0;
+	                padding:0;
+	                font-family: 'Open Sans', sans-serif;   
+	                
+	                border:1px solid red;
+	          }              
+	
+			  .roundedBox{
+				  /*margin:30px auto;*/
+				  width: 100%;
+				  height: 100%;
+				  background: #fff;
+				  padding: 0 30px;
+				  box-sizing: border-box;
+				  border-radius: 5px;
+				  box-shadow: 0 0 15px rgba(0,0,0,.3);
+				  position: relative;
+				  overflow: auto;
+				  overflow-x:hidden;
+				  
+				  /* border:1px solid blue;*/
+			  }
+				
+			 .shoppingList{
+				  padding: 20px;
+				  height: 60vh;
+				  overflow: auto;
+				  
+				  /* border:10px solid grey;*/
+			 }
+				 
+			 .priceTab{
+				  padding-right: 20px;
+				  padding-left: 20px;
+				
+				  padding-top: 0px !important;
+				  margin-top: 15px;
+				  width: 100%;
+				  height:30vh;
+				  
+				 /*  border:10px solid yellow;*/
+			 }
+				
+			 .purchButton{
+				  width:100%;
+				  height:100%;
+				  color: white;
+				  letter-spacing: 2px;
+				  overflow: hidden;
+				  height:55px;
+				  white-space: normal;
+				  position: relative;
+				  text-transform: uppercase;
+				  -webkit-transition: all 0.3s ease;
+				          transition: all 0.3s ease;
+			}
         </style>
+        
         <script type="text/javascript">       
             $(document).ready(function(){   
                 var docHeight = $(window).height();
@@ -84,14 +91,14 @@
 
     
 	<%@ include file="menu.jsp" %>
-			<div class="container text-black-50">	   
-       <div class="row" style="padding-left:10px;padding-right:10px;">
+	<div class="container text-black-50">	   
+       <div class="row" style="padding-left:5px;padding-right:5px;padding-top:5px;">
            <div class="col-lg-7">     
                 <div class="form-group has-feedback">
                     <input type="text" class="form-control" placeholder="Search" id="search"/>
-                    <i class="glyphicon glyphicon-search form-control-feedback"></i>
                 </div>
-            </div>       
+            </div>              
+                 
 
             <div class="col-lg-5">
               <div class="roundedBox shoppingList">
@@ -113,7 +120,17 @@
               </div>
              
               <div class="roundedBox priceTab">
-                 <div class="row">
+               	<table>
+               		<tr>
+               			<td><h4><strong>Subtotal</strong></h4></td>
+               			<td><h4>   $1</h4></td>
+               		</tr>
+               		<tr>
+               			<td><h4><strong>Tax</strong></h4></td>
+               			<td><h4>   $1</h4></td>
+               		</tr>
+               	</table>	
+             <!--     <div class="row">
                     <div class="col-xs-8">
                         <div class="row">
                             <h4><strong>Subtotal</strong></h4>
@@ -137,6 +154,7 @@
                         </div>   
                     </div>                   
                  </div>
+                  -->
                  <div class="row">
                      <div class="purchButton">
                           <a href="#" class="btn btn-block btn-success">

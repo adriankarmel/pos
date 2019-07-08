@@ -7,13 +7,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(name="/posf")
-public class PosController {
+@RequestMapping(name="/sale")
+public class SaleController {
 	
 	@RequestMapping("/new")
-	public String newPOS(Model theModel) {
+	public String newSale(Model theModel) {
 
-		return "pos";
+		return "sale";
 	}
 
 }

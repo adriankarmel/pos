@@ -1,5 +1,6 @@
 package ca.karmel.pos.backend.entity;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -32,8 +33,18 @@ public class Category {
 						CascadeType.DETACH,
 						CascadeType.REFRESH})	
 	private List<Product> products;
+	
+	@Column(name="inactive")
+	private String inactive;	
+	
+	@Column(name="create_dt")	
+	private Date createDt;
+	
+	@Column(name="update_dt")
+	private Date updateDt;
 		
 	@Column(name = "comments")
+	@Size(min =1, max=45, message = "Comments Name must between 1 to 500 Characters.")
 	private String comments;
 	
 	public Category() {		
@@ -61,8 +72,32 @@ public class Category {
 
 	public void setName(String name) {
 		this.name = name;
-	}	
+	}		
 	
+	public String getInactive() {
+		return inactive;
+	}
+
+	public void setInactive(String inactive) {
+		this.inactive = inactive;
+	}
+
+	public Date getCreateDt() {
+		return createDt;
+	}
+
+	public void setCreateDt(Date createDt) {
+		this.createDt = createDt;
+	}
+
+	public Date getUpdateDt() {
+		return updateDt;
+	}
+
+	public void setUpdateDt(Date updateDt) {
+		this.updateDt = updateDt;
+	}
+
 	public String getComments() {
 		return comments;
 	}
@@ -70,4 +105,5 @@ public class Category {
 	public void setComments(String comments) {
 		this.comments = comments;
 	}
+	
 }

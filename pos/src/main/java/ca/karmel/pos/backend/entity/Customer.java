@@ -1,6 +1,6 @@
 package ca.karmel.pos.backend.entity;
 
-import java.util.LinkedHashMap;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -67,8 +69,11 @@ public class Customer {
 	@Column(name="inactive")
 	private String inactive;	
 	
-	@Column(name="create_dt")
-	private String createDt;
+	@Column(name="create_dt")	
+	private Date createDt;
+	
+	@Column(name="update_dt")
+	private Date updateDt;
 		
 	public Customer() {		
 	}
@@ -193,12 +198,19 @@ public class Customer {
 		this.inactive = inactive;
 	}
 
-	public String getCreateDt() {
+	public Date getCreateDt() {
 		return createDt;
 	}
 
-	public void setCreateDt(String createDt) {
+	public void setCreateDt(Date createDt) {
 		this.createDt = createDt;
-	}	
-	
+	}
+
+	public Date getUpdateDt() {
+		return updateDt;
+	}
+
+	public void setUpdateDt(Date updateDt) {
+		this.updateDt = updateDt;
+	}		
 }

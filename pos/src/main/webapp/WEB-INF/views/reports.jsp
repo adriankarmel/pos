@@ -29,7 +29,7 @@
 	
 	<body id="page-top">
 		<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>	
-		<form:form action="run" modelAttribute="reports" method="POST">
+		<!--<form:form action="run" modelAttribute="reports" method="POST">-->
 				
 			<!-- need to associate this data with job id -->
 			<!--<form:hidden path="Id" /> 	-->
@@ -50,6 +50,6 @@
 					<button type="button" class="btn btn-info" onClick="history.go(-1);">Go Back</button>							
 				</div>
 			</div>				
-		</form:form>
+		<!--</form:form>-->
 	</body>
 </html>
